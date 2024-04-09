@@ -31,8 +31,6 @@ export default function Home() {
             <p className="font-light text-lg">
               Descubra o poder da gestão acadêmica simplificada.
             </p>
-
-            <UserButton/>
           </div>
 
           <Dialog>

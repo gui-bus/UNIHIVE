@@ -80,7 +80,7 @@ export default function Footer() {
       <section className="flex flex-col items-center justify-around gap-y-4 px-4 pb-8 shadow-xl md:flex-row md:gap-y-0">
         <Link href="/">
           <Image
-            src="/Logo.svg"
+            src="/logo.svg"
             alt="UNIHIVE"
             width={200}
             height={50}
