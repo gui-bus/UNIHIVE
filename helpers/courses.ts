@@ -1,0 +1,16 @@
+export enum COURSES {
+  ADMINISTRACAO = "Administração",
+  ARQUITETURA = "Arquitetura",
+  BIOLOGIA = "Biologia",
+  CIENCIAS_COMPUTACAO = "Ciências da Computação",
+  DIREITO = "Direito",
+  ECONOMIA = "Economia",
+  ENGENHARIA_CIVIL = "Engenharia Civil",
+  ENGENHARIA_COMPUTACAO = "Engenharia de Computação",
+  ENGENHARIA_MECANICA = "Engenharia Mecânica",
+  ENFERMAGEM = "Enfermagem",
+  MEDICINA = "Medicina",
+  PEDAGOGIA = "Pedagogia",
+  PSICOLOGIA = "Psicologia",
+  OUTRO = "Outro (Especifique)",
+}
