@@ -1,4 +1,5 @@
-import { SignIn, UserButton } from "@clerk/nextjs";
+"use client";
+import { SignIn, useUser } from "@clerk/nextjs";
 import Image from "next/image";
 
 import {
@@ -11,8 +12,10 @@ import {
 import { Button } from "@/components/ui/button";
 
 import { ImEnter } from "react-icons/im";
+import { MdOutlineAdminPanelSettings } from "react-icons/md";
 
 export default function Home() {
+  const { user } = useUser();
   return (
     <main className="bg-[url('/home.png')] bg-cover bg-center bg-no-repeat py-20 flex items-center justify-center 3xl:max-w-7xl mx-auto 3xl:rounded-b-2xl">
       <div className="flex items-center justify-center p-5 text-center">
@@ -33,20 +36,26 @@ export default function Home() {
             </p>
           </div>
 
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="flex items-center justify-center gap-2 h-14 w-full">
-                Login <ImEnter size={20} />
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogDescription>
-                  <SignIn  redirectUrl={'/dashboard'}/>
-                </DialogDescription>
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
+          {user?.id !== "" ? (
+            <Button className="flex items-center justify-center gap-2 h-14 w-full">
+            Acessar Painel <MdOutlineAdminPanelSettings size={20} />
+          </Button>
+          ) : (
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="flex items-center justify-center gap-2 h-14 w-full">
+                  Login <ImEnter size={20} />
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogDescription>
+                    <SignIn redirectUrl={"/dashboard"} />
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+          )}
         </div>
       </div>
     </main>
