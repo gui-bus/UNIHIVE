@@ -10,7 +10,7 @@ import { Toaster } from "react-hot-toast";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "UNIHIVE",
+  title: "UNIHIVE | Dashboard acadêmica",
   description: "Plataforma de gerenciamento acadêmico para universidades.",
   keywords: [
     "universidade",
