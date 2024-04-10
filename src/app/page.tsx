@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 
 import { ImEnter } from "react-icons/im";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
+import Link from "next/link";
 
 export default function Home() {
   const { user } = useUser();
@@ -37,9 +38,14 @@ export default function Home() {
           </div>
 
           {user?.id !== "" ? (
-            <Button className="flex items-center justify-center gap-2 h-14 w-full">
-            Acessar Painel <MdOutlineAdminPanelSettings size={20} />
-          </Button>
+            <Button
+              className="flex items-center justify-center gap-2 h-14 w-full"
+              asChild
+            >
+              <Link href={"/dashboard"}>
+                Acessar Painel <MdOutlineAdminPanelSettings size={20} />
+              </Link>
+            </Button>
           ) : (
             <Dialog>
               <DialogTrigger asChild>
