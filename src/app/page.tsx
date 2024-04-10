@@ -16,7 +16,7 @@ import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import Link from "next/link";
 
 export default function Home() {
-  const { user } = useUser();
+  const { isSignedIn } = useUser();
   return (
     <main className="bg-[url('/home.png')] bg-cover bg-center bg-no-repeat py-20 flex items-center justify-center 3xl:max-w-7xl mx-auto 3xl:rounded-b-2xl">
       <div className="flex items-center justify-center p-5 text-center">
@@ -37,7 +37,7 @@ export default function Home() {
             </p>
           </div>
 
-          {user?.id !== "" ? (
+          {isSignedIn ? (
             <Button
               className="flex items-center justify-center gap-2 h-14 w-full"
               asChild
